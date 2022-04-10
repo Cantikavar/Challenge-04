@@ -1,0 +1,466 @@
+/* NAVBAR DEFAULT */
+.container-dashboard {
+  position: absolute;
+  width: 1440px;
+  height: 266px;
+  left: 0px;
+  top: 0px;
+  background: #f1f3ff;
+}
+
+.container-content {
+  margin-left: 150px;
+  margin-top: 110px;
+  width: 50px;
+}
+
+.btn-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  position: static;
+  width: 81px;
+  height: 36px;
+  left: 359px;
+  top: 0px;
+  background: #5cb85f;
+  border-radius: 2px;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  margin: 0px 32px;
+  color: white;
+}
+
+.btn-register p {
+  margin-top: 17px;
+}
+
+/* CONTENT*/
+.container-frame {
+  width: 1047px;
+  height: 142px;
+  left: 196px;
+  top: 195px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+.pencarianS {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 25px;
+  margin-top: 23px;
+  margin-bottom: -5px;
+}
+
+.judul01 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #8a8a8a;
+}
+
+.tipeDriver {
+  align-items: center;
+  padding: 9px 12px;
+  width: 237.75px;
+  height: 36px;
+  background: #d0d0d0;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  order: 1;
+  margin-left: 20px;
+  margin-top: -9px;
+}
+
+.judul02 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 278px;
+  margin-top: -60px;
+  color: #8a8a8a;
+}
+
+.logoCalender03 {
+  padding-left: 200px;
+  margin-top: -7px;
+}
+
+.date-frame {
+  align-items: center;
+  padding: 9px 12px;
+  width: 237.75px;
+  height: 36px;
+  background: #d0d0d0;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  order: 1;
+  margin-left: 278px;
+  margin-top: -15px;
+}
+
+.judul03 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  margin-left: 532px;
+  margin-top: -55px;
+  margin-bottom: 18px;
+  color: #8a8a8a;
+}
+
+.logoClock03 {
+  padding-left: 200px;
+  margin-top: -7px;
+}
+
+.time-frame {
+  align-items: center;
+  padding: 9px 12px;
+  width: 237.75px;
+  height: 36px;
+  background: #d0d0d0;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  order: 1;
+  margin-left: 532px;
+  margin-top: -17px;
+}
+
+.judul04 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  margin-left: 788px;
+  margin-top: -56px;
+  color: #8a8a8a;
+}
+
+.logoUser03 {
+  padding-left: 200px;
+  margin-top: -7px;
+}
+
+.people-frame {
+  align-items: center;
+  padding: 9px 12px;
+  width: 237.75px;
+  height: 36px;
+  background: #d0d0d0;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  order: 1;
+  margin-left: 788px;
+  margin-top: -14px;
+}
+
+.container-content0103 {
+  width: 605px;
+  height: 618px;
+  left: 199px;
+  top: 368px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  position: relative;
+}
+
+.container-cardCar03 {
+  width: 405px;
+  height: 435px;
+  left: 836px;
+  top: 368px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  margin-top: 15px;
+  position: absolute;
+}
+
+.judul-card0103 {
+  width: 140px;
+  height: 20px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.line-01 {
+  width: 57px;
+  height: 20px;
+  left: 223px;
+  top: 428px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.point-01 {
+  width: 557px;
+  height: 100px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 175%;
+  color: #8a8a8a;
+  margin-left: 18px;
+}
+
+.point-03 {
+  width: 557px;
+  height: 100px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 175%;
+  color: #8a8a8a;
+  margin-left: 18px;
+  margin-top: -20px;
+}
+
+.line-strong {
+  width: 240px;
+  height: 50px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  margin-left: 25px;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+
+.carMobil {
+  width: 270px;
+  height: 160px;
+  margin-top: 25px;
+  margin-left: 70px;
+}
+
+.judul-cardcar {
+  width: 150px;
+  height: 25px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  flex: none;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.property-car-2 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 14px;
+  color: #8a8a8a;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.property-car-settings {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 14px;
+  color: #8a8a8a;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-left: 120px;
+  margin-top: -19px;
+}
+
+.property-car-calender {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 14px;
+  color: #8a8a8a;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-left: 210px;
+  margin-top: -19px;
+}
+
+.judul-cardcar02 {
+  width: 29px;
+  height: 20px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.price-car {
+  width: 100px;
+  height: 20px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 300px;
+  margin-top: -35px;
+}
+
+.btn-payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 358px;
+  height: 36px;
+  background: #5cb85f;
+  border-radius: 2px;
+  color: white;
+  margin-top: 30px;
+  margin-left: 23px;
+}
+
+.btn-payment p {
+  margin-top: 17px;
+}
+
+.btn-payment-0302 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 178px;
+  height: 36px;
+  background: #5cb85f;
+  border-radius: 2px;
+  margin-top: 390px;
+  margin-left: 628px;
+  color: white;
+  position: absolute;
+}
+
+.btn-payment-0302 p {
+  margin-top: 17px;
+}
+
+/* FOOTER DEFAULT */
+.Footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  position: absolute;
+  width: 1141px;
+  height: 128px;
+  left: 173px;
+  top: 672px;
+}
+
+.footer-content1 ul {
+  list-style: none;
+  line-height: 30px;
+  color: #000000;
+  margin-top: 290px;
+  margin-left: 100px;
+}
+
+.footer-content2 ul {
+  list-style: none;
+  margin-right: 750px;
+  margin-top: -107px;
+  margin-left: 590px;
+}
+
+.footer-content3 {
+  text-align: center;
+  padding-right: 80;
+  position: absolute;
+  width: 268px;
+  height: 20px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 750px;
+  margin-top: -155px;
+}
+.footer-content3 ul {
+  list-style: none;
+  font-size: small;
+  line-height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.footer-content3 img {
+  height: 20px;
+  width: 20px;
+  margin-left: 50px;
+  margin: 2px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-content4 {
+  position: absolute;
+  width: 268px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-left: 1200px;
+  margin-top: -160px;
+}
