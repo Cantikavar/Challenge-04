@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import "../DetailSewa/DetailSewa.css";
 import logoDashboard from "../../Assets/IMG/logo.png";
@@ -12,8 +12,39 @@ import logoInstagram from "../../Assets/IMG/icon_instagram.png";
 import logoTwitter from "../../Assets/IMG/icon_twitter.png";
 import logoMail from "../../Assets/IMG/icon_mail.png";
 import logoTwicth from "../../Assets/IMG/icon_twitch.png";
+import { useParams } from "react-router";
+import axios from "axios";
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchItem, setButton } from "../../Redux/Action/Action";
+import { CalendarTodayOutlined, PeopleOutline, SettingsOutlined } from "@material-ui/icons";
+
+
+const useStyles = makeStyles((theme) => ({
+  detailCard: {
+    background: "white",
+    padding: "100px 0",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+}));
 
 export const DetailSewa = () => {
+  const { carId } = useParams();
+  console.log(carId);
+  const cars = useSelector((state) => state.selectedItem);
+  console.log(cars);
+  const dispatch = useDispatch();
+  const btn = useSelector((state) => state.buttonText.buttonText);
+
+  useEffect(() => {
+    if (carId && carId !== "") dispatch(fetchItem(carId));
+    dispatch(setButton("Lanjutkan pembayaran"));
+  });
+
+  const classes = useStyles();
+
   return (
     <div className="main-container">
       <div className="container-dashboard">
@@ -74,85 +105,98 @@ export const DetailSewa = () => {
         </div>
       </div>
 
-      <div className="container-content0103">
-        <h5 className="judul-card0103">Tentang Paket</h5>
-        <p className="line-01">Include</p>
-        <ul className="point-01">
-          <li>Apa saja yang termasuk dalam paket misal durasi max 12 jam</li>
-          <li>Sudah termasuk bensin selama 12 jam</li>
-          <li>Sudah termasuk Tiket Wisata</li>
-          <li>Sudah termasuk pajak</li>
-        </ul>
+    <div className="detailCard">
+      <div className={classes.detailCard}>
+        <div style={{ width: "80%", display: "flex", justifyContent: "space-between", alignItems: "flex-start", paddingBottom: "20px" }}>
+          <Card item={true} style={{ width: "60%", marginBottom: "10px" }}>
+            <CardActionArea>
+              <CardContent>
+                <Typography variant="p" component="div" style={{ fontWeight: "bold", paddingBottom: "8px" }}>
+                  Tentang Paket
+                </Typography>
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom: "8px" }}>
+                  Include
+                </Typography>
 
-        <p className="line-01">Exclude</p>
-        <ul className="point-01">
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-        </ul>
-        <div className="line-strong">
-          <p>
-            <strong>Refund, Reschedule, Overtime</strong>
-          </p>
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom: "8px" }}>
+                  <ul>
+                    <li>Apa saja yang termasuk dalam paket misal durasi max 12 jam</li>
+                    <li>Sudah termasuk bensin selama 12 jam</li>
+                    <li>Sudah termasuk Tiket Wisata</li>
+                    <li>Sudah termasuk pajak</li>
+                  </ul>
+                </Typography>
+
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom: "8px" }}>
+                  Exclude
+                </Typography>
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom: "8px" }}>
+                  <ul>
+                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+                    <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+                    <li>Tidak termasuk akomodasi penginapan</li>
+                  </ul>
+                </Typography>
+                <Typography variant="p" component="div" style={{ fontWeight: "bold", paddingBottom: "8px" }}>
+                  Refund, Reschedule, Overtime
+                </Typography>
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom: "8px" }}>
+                  <ul>
+                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari </li>
+                    <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+                    <li>Tidak termasuk akomodasi penginapan</li>
+                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+                    <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari </li>
+                    <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+                    <li>Tidak termasuk akomodasi penginapan</li>
+                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+                    <li>Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+                  </ul>
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+
+          <Card style={{ width: "32%", marginBottom: "10px" }}>
+            <CardActionArea>
+              <CardMedia component="img" image={cars.image} alt={cars.name} style={{ padding: "10px", maxHeight: "200px" }} />
+              <CardContent>
+                <Typography variant="h6" component="div" style={{ paddingBottom: "8px" }}>
+                  {cars.name}
+                </Typography>
+                <Typography style={{ display: "flex", color: "grey" }}>
+                  <Typography variant="body2" color="text.secondary" style={{ display: "flex", alignItems: "center" }}>
+                    <PeopleOutline /> 4 Orang &nbsp;
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" style={{ display: "flex", alignItems: "center" }}>
+                    <SettingsOutlined /> {cars?.category} &nbsp;
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" style={{ display: "flex", alignItems: "center" }}>
+                    <CalendarTodayOutlined /> {cars.time}
+                  </Typography>
+                </Typography>
+
+                <Typography style={{ display: "flex" }}>
+                  <Typography style={{ paddingTop: "40px" }}>Total </Typography>
+                  <Typography variant="p" component="div" style={{ fontWeight: "bold", paddingTop: "40px", marginLeft: "188px" }}>
+                    Rp {cars.price}
+                  </Typography>
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button variant="contained" style={{ background: "#5CB85F", color: "white" }} fullWidth>
+                {/* Pilih Mobil */}
+                {btn}
+              </Button>
+            </CardActions>
+          </Card>
         </div>
-        <ul className="point-03">
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-        </ul>
+        <Button href={`/pemesanan`} variant="contained" style={{ background: "#5CB85F", color: "white" }}>
+          Lanjutkan Pembayaran
+        </Button>
       </div>
-
-      <div className="container-cardCar03">
-        <img alt="" src={carMobil} className="carMobil" />
-        <div className="judul-cardcar">
-          <p>
-            <strong>Nama/Tipe Mobil</strong>
-          </p>
-        </div>
-        <div className="property-car-2">
-          <img alt="" src={logoUser} /> 4 orang
-        </div>
-
-        <div className="property-car-settings">
-          <img alt="" src={logoSetting} /> Manual
-        </div>
-
-        <div className="property-car-calender">
-          <img alt="" src={logoCalender} /> Tahun 2020
-        </div>
-
-        <p className="judul-cardcar02">Total</p>
-        <div className="price-car">
-          <p>
-            <strong>Rp 430.000</strong>
-          </p>
-        </div>
-
-        <div className="btn-payment">
-          <p>Lanjutkan Pembayaran</p>
-        </div>
-      </div>
-
-      <div className="btn-payment-0302">
-        <p>Lanjutkan Pembayaran</p>
       </div>
 
       <div className="Footer-Container">

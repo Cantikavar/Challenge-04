@@ -390,6 +390,13 @@
   margin-top: 17px;
 }
 
+.detailCard {
+  margin-top: 300px;
+  margin-left: 30px;
+}
+
+
+
 /* FOOTER DEFAULT */
 .Footer-container {
   display: flex;

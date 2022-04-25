@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { Button, Card, Container, Nav, Navbar } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "../PencarianMobil/PencarianMobil.css";
+import "../PencarianMobil/Cars";
 import logoDashboard from "../../Assets/IMG/logo.png";
 import carMobil from "../../Assets/IMG/image 1.png";
 import logoUser from "../../Assets/IMG/fi_users.png";
@@ -12,8 +12,24 @@ import logoInstagram from "../../Assets/IMG/icon_instagram.png";
 import logoTwitter from "../../Assets/IMG/icon_twitter.png";
 import logoMail from "../../Assets/IMG/icon_mail.png";
 import logoTwicth from "../../Assets/IMG/icon_twitch.png";
+import { Grid, Typography } from "@material-ui/core";
+import Cars from "../PencarianMobil/Cars";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchItems, setButton } from "../../Redux/Action/Action";
+import { useEffect, useState } from "react";
 
 export const PencarianMobil = () => {
+  
+  const btn = useSelector((state) => state.buttonText.buttonText);
+  const cars = useSelector((state) => state.cars.items);
+  console.log(cars);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setButton("Pilih Mobil"));
+    dispatch(fetchItems());
+  });
+
   const [date, setDate] = useState(new Date());
   const [startDate, setStartDate] = useState(new Date());
 
@@ -116,135 +132,22 @@ export const PencarianMobil = () => {
         </div>
       </div>
 
-      <div className="container-Car">
-        <div className="cardCar01">
-          <Card style={{ width: "17.9375rem" }} className="card-mobil">
-            <Card.Img variant="top" src={carMobil} className="img-mobil" />
-            <Card.Body>
-              <div className="tipe-mobil">Nama/Tipe Mobil</div>
-              {/* <Card mobil 01> */}
-              <div className="harga">
-                {" "}
-                <strong>Rp 430.000 / hari</strong>
-              </div>
-
-              <div className="property-car02">
-                <div className="property-car-txt02">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-
-              <div className="property-car-202">
-                <img alt="" src={logoUser} /> 4 orang
-              </div>
-
-              <div className="property-car-settings02">
-                <img alt="" src={logoSetting} /> Manual
-              </div>
-
-              <div className="property-car-calender02">
-                <img alt="" src={logoCalender} /> Tahun 2020
-              </div>
-
-              <div className="btn-pilihcar">
-                <a
-                  href="/detailSewa"
-                  className="tag"
-                  onClick={() => {
-                    GoHalamanD();
-                  }}
-                >
-                  <p>Pilih Mobil</p>
-                </a>
-              </div>
-            </Card.Body>
-          </Card>
-        </div>
-
-        <div className="cardCar02">
-          <Card style={{ width: "17.9375rem" }} className="card-mobil">
-            <Card.Img variant="top" src={carMobil} className="img-mobil" />
-            <Card.Body>
-              <div className="tipe-mobil">Nama/Tipe Mobil</div>
-              {/* <Card mobil 02> */}
-              <div className="harga">
-                {" "}
-                <strong>Rp 430.000 / hari</strong>
-              </div>
-
-              <div className="property-car02">
-                <div className="property-car-txt02">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-
-              <div className="property-car-202">
-                <img alt="" src={logoUser} /> 4 orang
-              </div>
-
-              <div className="property-car-settings02">
-                <img alt="" src={logoSetting} /> Manual
-              </div>
-
-              <div className="property-car-calender02">
-                <img alt="" src={logoCalender} /> Tahun 2020
-              </div>
-
-              <div className="btn-pilihcar">
-                <p>Pilih Mobil</p>
-              </div>
-            </Card.Body>
-          </Card>
-        </div>
-
-        <div className="cardCar03">
-          <Card style={{ width: "17.9375rem" }} className="card-mobil">
-            <Card.Img variant="top" src={carMobil} className="img-mobil" />
-            <Card.Body>
-              <div className="tipe-mobil">Nama/Tipe Mobil</div>
-              {/* <Card mobil 03> */}
-              <div className="harga">
-                {" "}
-                <strong>Rp 430.000 / hari</strong>
-              </div>
-
-              <div className="property-car02">
-                <div className="property-car-txt02">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-
-              <div className="property-car-202">
-                <img alt="" src={logoUser} /> 4 orang
-              </div>
-
-              <div className="property-car-settings02">
-                <img alt="" src={logoSetting} /> Manual
-              </div>
-
-              <div className="property-car-calender02">
-                <img alt="" src={logoCalender} /> Tahun 2020
-              </div>
-
-              <div className="btn-pilihcar">
-                <p>Pilih Mobil</p>
-              </div>
-            </Card.Body>
-          </Card>
-        </div>
-      </div>
+      <div>
+      <Grid container justifyContent="center">
+        {/* {cars ? ( */}
+        {typeof cars !== "undefined" ? (
+          cars.map((item) => {
+            return (
+              <Grid elevation={0} spacing={1} item key={item.id}>
+                <Cars item={item} />
+              </Grid>
+            );
+          })
+        ) : (
+          <Typography>Empty List</Typography>
+        )}
+      </Grid>
+    </div>
 
       <div className="Footer-Container">
         <div className="footer-content1">
@@ -293,3 +196,5 @@ export const PencarianMobil = () => {
     </div>
   );
 };
+
+export default Card;
